@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>SAFE TOPUP.HT</title>
+  <style>
+    body {
+      background: #121212;
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      padding: 20px;
+      margin: 0;
+    }
+
+    h1 {
+      color: #00ffe7;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    img.logo {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 150px;
+      border-radius: 50%;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #1e1e1e;
+      border-radius: 15px;
+      padding: 20px;
+    }
+
+    .prices h2 {
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+
+    .prices ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .prices li {
+      padding: 8px 0;
+      font-size: 16px;
+      border-bottom: 1px solid #333;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+    }
+
+    input {
+      background: #fff;
+      color: #000;
+    }
+
+    input[type="file"] {
+      background: #1e1e1e;
+      color: #fff;
+      border: 1px solid #555;
+    }
+
+    button {
+      background: #00ffe7;
+      color: #000;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #00c7b2;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>SAFE TOPUP.HT</h1>
+  <img src="https://files.catbox.moe/l26vv4.jpeg" alt="Logo" class="logo">
+
+  <div class="container">
+    <div class="prices">
+      <h2>Diamants Free Fire</h2>
+      <ul>
+        <li>100💎 = 150 HTG</li>
+        <li>310💎 = 450 HTG</li>
+        <li>520💎 = 750 HTG</li>
+        <li>1060💎 = 1450 HTG</li>
+        <li>2180💎 = 2800 HTG</li>
+        <li>5600💎 = 7100 HTG</li>
+      </ul>
+    </div>
+
+    <form action="https://formsubmit.co/safetopup3@gmail.com" method="POST" enctype="multipart/form-data">
+      <input type="text" name="ID Free Fire" placeholder="ID du compte Free Fire" required>
+      <input type="text" name="Nom du compte" placeholder="Nom du compte Free Fire" required>
+      <input type="text" name="Quantité de diamants" placeholder="Ex: 100, 310, 520..." required>
+      <input type="file" name="Preuve de paiement" accept="image/*" required>
+
+      <input type="hidden" name="_next" value="https://safetopup.vercel.app/commande-envoyee.html">
+      <input type="hidden" name="_captcha" value="false">
+      
+      <button type="submit">Envoyer la commande</button>
+    </form>
+  </div>
+
+  <div class="footer">
+    © 2025 SAFE TOPUP.HT - Tous droits réservés.
+  </div>
+
+</body>
+</html>
