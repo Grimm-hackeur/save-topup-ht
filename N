@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>SAFE TOPUP.HT</title>
+  <style>
+    body {
+      background: #121212;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #00ffe7;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .prices, .form-section {
+      background: #1f1f1f;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 500px;
+      box-shadow: 0 0 10px #00ffe7;
+    }
+
+    .prices h2 {
+      color: #ffcc00;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin: 10px 0;
+    }
+
+    input, button {
+      width: 90%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: none;
+      font-size: 16px;
+    }
+
+    input {
+      background: #fff;
+      color: #000;
+    }
+
+    button {
+      background: #00ffe7;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #00c2aa;
+    }
+
+    .admin-link {
+      margin-top: 30px;
+    }
+
+    a {
+      color: #00ffe7;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>SAFE TOPUP.HT</h1>
+  <img src="https://files.catbox.moe/l26vv4.jpeg" alt="Free Fire Topup">
+
+  <div class="prices">
+    <h2>Prix des diamants Free Fire</h2>
+    <ul>
+      <li>100💎 = 150 HTG</li>
+      <li>310💎 = 450 HTG</li>
+      <li>520💎 = 750 HTG</li>
+      <li>1060💎 = 1450 HTG</li>
+      <li>2180💎 = 2750 HTG</li>
+      <li>5600💎 = 6250 HTG</li>
+    </ul>
+  </div>
+
+  <div class="form-section">
+    <h2>Passer une commande</h2>
+    <form action="commandes.html" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+      <input type="text" name="username" placeholder="Nom du compte Free Fire" required>
+      <input type="text" name="userid" placeholder="ID du compte Free Fire" required>
+      <input type="number" name="amount" placeholder="Quantité de diamants" required>
+      <input type="file" name="proof" accept="image/*" required>
+      <button type="submit">Envoyer la commande</button>
+    </form>
+  </div>
+
+  <div class="admin-link">
+    <a href="admin.html">Admin principal sécurisé</a>
+  </div>
+
+  <script>
+    function validateForm() {
+      const username = document.querySelector('input[name="username"]').value.trim();
+      const userid = document.querySelector('input[name="userid"]').value.trim();
+      const amount = document.querySelector('input[name="amount"]').value.trim();
+      if (!username || !userid || !amount) {
+        alert("Tous les champs doivent être remplis !");
+        return false;
+      }
+      alert("Commande envoyée !");
+      return true;
+    }
+  </script>
+
+</body>
+</html
