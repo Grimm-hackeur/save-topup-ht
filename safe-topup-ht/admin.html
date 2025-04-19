@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - SAFE TOPUP.HT</title>
+  <style>
+    body {
+      background: #101010;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 20px;
+    }h1 {
+  color: #00ffe7;
+}
+
+.login-box, .commands-box {
+  background: #1f1f1f;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #00ffe7;
+}
+
+input, button {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+}
+
+input {
+  background: #fff;
+  color: #000;
+}
+
+button {
+  background: #00ffe7;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #00c2aa;
+}
+
+.hidden {
+  display: none;
+}
+
+.commande {
+  background: #2c2c2c;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+  </style>
+</head>
+<body>
+  <h1>Admin - SAFE TOPUP.HT</h1>  <div class="login-box" id="login-box">
+    <h2>Connexion admin</h2>
+    <input type="password" id="adminPass" placeholder="Mot de passe admin">
+    <button onclick="checkLogin()">Connexion</button>
+  </div>  <div class="commands-box hidden" id="commands-box">
+    <h2>Commandes reçues</h2>
+    <div id="commandes">
+      <div class="commande">Commande 1 - Exemple : JohnDoe / ID: 123456 / 310 diamants</div>
+      <div class="commande">Commande 2 - Exemple : JeanJean / ID: 987654 / 520 diamants</div>
+    </div>
+    <br>
+    <button onclick="modifierCommandes()">Modifier les commandes</button>
+    <textarea id="editor" class="hidden" rows="10" style="width: 100%;"></textarea>
+    <button id="saveBtn" class="hidden" onclick="sauverCommandes()">Sauvegarder</button>
+  </div>  <script>
+    const pass = "safetopup123";
+
+    function checkLogin() {
+      const input = document.getElementById("adminPass").value;
+      if (input === pass) {
+        document.getElementById("login-box").classList.add("hidden");
+        document.getElementById("commands-box").classList.remove("hidden");
+      } else {
+        alert("Mot de passe incorrect");
+      }
+    }
+
+    function modifierCommandes() {
+      const commandes = document.getElementById("commandes").innerText;
+      document.getElementById("editor").value = commandes;
+      document.getElementById("editor").classList.remove("hidden");
+      document.getElementById("saveBtn").classList.remove("hidden");
+    }
+
+    function sauverCommandes() {
+      const nouvellesCommandes = document.getElementById("editor").value;
+      const div = document.getElementById("commandes");
+      div.innerHTML = nouvellesCommandes.split('\n').map(cmd => `<div class='commande'>${cmd}</div>`).join('');
+      alert("Commandes mises à jour !");
+      document.getElementById("editor").classList.add("hidden");
+      document.getElementById("saveBtn").classList.add("hidden");
+    }
+  </script></body>
+</html
