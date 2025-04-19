@@ -7,57 +7,48 @@
     body {
       background: #121212;
       color: #fff;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
       padding: 20px;
-      margin: 0;
     }
 
     h1 {
       color: #00ffe7;
-      text-align: center;
-      margin-bottom: 10px;
     }
 
-    img.logo {
-      display: block;
-      margin: 0 auto 20px;
-      max-width: 150px;
-      border-radius: 50%;
+    img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-bottom: 20px;
     }
 
-    .container {
-      max-width: 600px;
-      margin: auto;
-      background: #1e1e1e;
-      border-radius: 15px;
+    .prices, .form-section {
+      background: #1f1f1f;
+      border-radius: 12px;
       padding: 20px;
+      margin: 20px auto;
+      max-width: 500px;
+      box-shadow: 0 0 10px #00ffe7;
     }
 
     .prices h2 {
       color: #ffcc00;
-      margin-bottom: 10px;
     }
 
-    .prices ul {
+    ul {
       list-style: none;
       padding: 0;
     }
 
-    .prices li {
-      padding: 8px 0;
-      font-size: 16px;
-      border-bottom: 1px solid #333;
-    }
-
-    form {
-      margin-top: 20px;
+    li {
+      margin: 10px 0;
     }
 
     input, button {
-      width: 100%;
-      padding: 10px;
+      width: 90%;
+      padding: 12px;
       margin: 10px 0;
-      border-radius: 5px;
+      border-radius: 6px;
       border: none;
       font-size: 16px;
     }
@@ -67,64 +58,72 @@
       color: #000;
     }
 
-    input[type="file"] {
-      background: #1e1e1e;
-      color: #fff;
-      border: 1px solid #555;
-    }
-
     button {
       background: #00ffe7;
       color: #000;
+      font-weight: bold;
       cursor: pointer;
     }
 
     button:hover {
-      background: #00c7b2;
+      background: #00c2aa;
     }
 
-    .footer {
-      text-align: center;
+    .admin-link {
       margin-top: 30px;
-      font-size: 14px;
-      color: #777;
+    }
+
+    a {
+      color: #00ffe7;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
 
   <h1>SAFE TOPUP.HT</h1>
-  <img src="https://files.catbox.moe/l26vv4.jpeg" alt="Logo" class="logo">
+  <img src="https://files.catbox.moe/l26vv4.jpeg" alt="Free Fire Topup">
 
-  <div class="container">
-    <div class="prices">
-      <h2>Diamants Free Fire</h2>
-      <ul>
-        <li>100💎 = 150 HTG</li>
-        <li>310💎 = 450 HTG</li>
-        <li>520💎 = 750 HTG</li>
-        <li>1060💎 = 1450 HTG</li>
-        <li>2180💎 = 2800 HTG</li>
-        <li>5600💎 = 7100 HTG</li>
-      </ul>
-    </div>
+  <div class="prices">
+    <h2>Prix des diamants Free Fire</h2>
+    <ul>
+      <li>100💎 = 150 HTG</li>
+      <li>310💎 = 450 HTG</li>
+      <li>520💎 = 750 HTG</li>
+      <li>1060💎 = 1450 HTG</li>
+      <li>2180💎 = 2750 HTG</li>
+      <li>5600💎 = 6250 HTG</li>
+    </ul>
+  </div>
 
-    <form action="https://formsubmit.co/safetopup3@gmail.com" method="POST" enctype="multipart/form-data">
-      <input type="text" name="ID Free Fire" placeholder="ID du compte Free Fire" required>
-      <input type="text" name="Nom du compte" placeholder="Nom du compte Free Fire" required>
-      <input type="text" name="Quantité de diamants" placeholder="Ex: 100, 310, 520..." required>
-      <input type="file" name="Preuve de paiement" accept="image/*" required>
-
-      <input type="hidden" name="_next" value="https://safetopup.vercel.app/commande-envoyee.html">
-      <input type="hidden" name="_captcha" value="false">
-      
+  <div class="form-section">
+    <h2>Passer une commande</h2>
+    <form action="commandes.html" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+      <input type="text" name="username" placeholder="Nom du compte Free Fire" required>
+      <input type="text" name="userid" placeholder="ID du compte Free Fire" required>
+      <input type="number" name="amount" placeholder="Quantité de diamants" required>
+      <input type="file" name="proof" accept="image/*" required>
       <button type="submit">Envoyer la commande</button>
     </form>
   </div>
 
-  <div class="footer">
-    © 2025 SAFE TOPUP.HT - Tous droits réservés.
+  <div class="admin-link">
+    <a href="admin.html">Admin principal sécurisé</a>
   </div>
 
+  <script>
+    function validateForm() {
+      const username = document.querySelector('input[name="username"]').value.trim();
+      const userid = document.querySelector('input[name="userid"]').value.trim();
+      const amount = document.querySelector('input[name="amount"]').value.trim();
+      if (!username || !userid || !amount) {
+        alert("Tous les champs doivent être remplis !");
+        return false;
+      }
+      alert("Commande envoyée !");
+      return true;
+    }
+  </script>
+
 </body>
-</html>
+    </html
